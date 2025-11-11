@@ -1,0 +1,12 @@
+/* Import Roboto first */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* Apply globally */
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Then Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
