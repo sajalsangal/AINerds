@@ -5,8 +5,10 @@ function App() {
 
   return (
     <>
+    <div className="relative pt-20">
       <Navbar />
       <Home />
+    </div>
     </>
   )
 }

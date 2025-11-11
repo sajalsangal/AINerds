@@ -1,52 +1,103 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { FiMenu, FiX } from 'react-icons/fi';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("")
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  //check scrolled and change navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [])
+
+  const handleMenuItem = (sectionId) => {
+    setActiveSection(sectionId);
+    setIsOpen(false)
+  }
+
+  const menuItems = [
+    { id: "home", label: "Home", href: "https://www.linkedin.com/feed/" },
+    { id: "uploadResume", label: "Upload Resume", href: "https://www.linkedin.com/feed/" },
+    { id: "dashboard", label: "Dashboard", href: "https://www.linkedin.com/feed/" },
+    { id: "aiNews", label: "AI News", href: "https://www.linkedin.com/feed/" }
+  ]
   return (
-    <nav className="flex justify-between items-center p-6 relative z-10">
-      {/* VIVAR Logo */}
-      <a href="/" className="flex flex-col">
-        <div className="flex items-center">
-          {/* LAB part */}
-          <span className="text-white text-6xl font-bold tracking-wider">AI</span>
-
-          {/* O with green circle and checkmark */}
-          <div className="relative mx-1">
-            <span className="text-white text-6xl font-bold">O</span>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center transform translate-y-0.5">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* RO part */}
-          <span className="text-white text-6xl font-bold tracking-wider">NERDS</span>
+    <nav className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] ${isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}>
+      <div className='text-white py-5 flex justify-between items-center'>
+        {/*Logo*/}
+        <div className='text-lg font-semibold cursor-pointer'>
+          <span className='text-[#8245ec]'>&lt;</span>
+          <span className='text-black'>AI</span>
+          <span className='text-[#8245ec]'>/</span>
+          <span className='text-black'>Nerds</span>
+          <span className='text-[#8245ec]'>&gt;</span>
         </div>
 
-        {/* Tagline */}
-        <p className="text-green-500 text-2xl font-medium mt-1">
-          JOB
-        </p>
-      </a>
+        {/*Desktop Menu */}
+        <ul className='md:flex space-x-8 text-black'>
+          {menuItems.map((item) => (
+            <li key={item.id} className={`hidden md:flex cursor-pointer hover:text-[#AA7FF0] hover:font-semibold ${activeSection === item.id ? "text-[#AA7FF0] font-semibold" : ""
+              }`}>
+              <a href={item.href}>
+                <button onClick={() => handleMenuItem(item.id)}>
+                  {item.label}
+                </button>
+              </a>
+            </li>
+          ))}
 
-      {/* Navigation buttons */}
-      <div className="flex gap-6 mr-8">
-        <nav className="hidden md:flex items-center gap-6">
-          <a href="/" className="text-white/90 hover:text-white transition-all">Home</a>
-          <a href="/upload" className="text-white/90 hover:text-white transition-all">Upload Resume</a>
-          <a href="/dashboard" className="text-white/90 hover:text-white transition-all">Dashboard</a>
-          <a href="/interview" className="text-white/90 hover:text-white transition-all">Interview Prep</a>
-          <a href="/news" className="text-white/90 hover:text-white transition-all">AI News</a>
-        </nav>
-        <button className="bg-green-500 hover:bg-green-300 text-gray-800 px-6 py-2 rounded-lg font-medium flex items-center gap-2 transition-all">
-          Sign In
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+          <div className='space-x-4 flex'>
+            <a
+              href="https://www.linkedin.com/feed/"
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-black hover:text-[#AA7FF0]'
+            >
+              <FaWhatsapp size={28} />
+            </a>
+
+            {
+              isOpen ? (
+                <FiX className='md:hidden text-3xl cursor-pointer '
+                  onClick={() => setIsOpen(false)}
+                />
+              ) : (
+                <FiMenu className='md:hidden text-3xl cursor-pointer'
+                  onClick={() => setIsOpen(true)}
+                />
+              )
+            }
+          </div>
+        </ul>
       </div>
+
+      {/**Mobile menu items */}
+
+      {isOpen && (
+        <div className='absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg'>
+          <ul className='flex flex-col items-center space-y-4 py-4 text-gray-300'>
+            {menuItems.map((item) => (
+              <li key={item.id} className={`cursor-pointer hover:text-white hover:font-semibold ${activeSection === item.id ? "text-[#8254ec] font-semibold" : ""
+                }`}>
+                <a href={item.href}>
+                  <button onClick={() => handleMenuItem(item.id)}>
+                    {item.label}
+                  </button>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   )
 }
