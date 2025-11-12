@@ -43,7 +43,9 @@ const Navbar = () => {
         </div>
 
         {/*Desktop Menu */}
-        <ul className='md:flex space-x-8 text-black'>
+        <ul className={`md:flex space-x-20 ${
+          isScrolled ? "text-white" : "text-black"
+        }`}>
           {menuItems.map((item) => (
             <li key={item.id} className={`hidden md:flex cursor-pointer hover:text-[#AA7FF0] hover:font-semibold ${activeSection === item.id ? "text-[#AA7FF0] font-semibold" : ""
               }`}>
@@ -55,7 +57,7 @@ const Navbar = () => {
             </li>
           ))}
 
-          <div className='space-x-4 flex'>
+          <div className="space-x-4 flex ">
             <a
               href="https://www.linkedin.com/feed/"
               target='_blank'
@@ -67,11 +69,11 @@ const Navbar = () => {
 
             {
               isOpen ? (
-                <FiX className='md:hidden text-3xl cursor-pointer '
+                <FiX className='text-black md:hidden text-3xl cursor-pointer '
                   onClick={() => setIsOpen(false)}
                 />
               ) : (
-                <FiMenu className='md:hidden text-3xl cursor-pointer'
+                <FiMenu className='text-black md:hidden text-3xl cursor-pointer'
                   onClick={() => setIsOpen(true)}
                 />
               )

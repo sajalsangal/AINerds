@@ -10,3 +10,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-left {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 35s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 1024px) {
+    .animate-scroll-left { animation-duration: 25s; }
+  }
+  @media (max-width: 768px) {
+    .animate-scroll-left { animation-duration: 18s; }
+  }
+  @media (max-width: 480px) {
+    .animate-scroll-left { animation-duration: 18s; }
+  }
+}
+
