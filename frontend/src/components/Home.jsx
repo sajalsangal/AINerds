@@ -7,6 +7,7 @@ import polygon from '../assets/polygon.png'
 import { TypeAnimation } from 'react-type-animation';
 import AIFlowStepsAnimated from './AIFlowStepsAnimated'
 
+
 const HomePage = () => {
   return (
     <div className="relative bg-white overflow-hidden">
@@ -286,16 +287,7 @@ const HomePage = () => {
               <div className="mb-6">
                 <div className="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center">
                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <g fill="#EF4444">
-        {/* L */}
-        <path d="M 50 18 L 50 32 L 58 32 L 58 30 L 52 30 L 52 18 Z" />
-        {/* I */}
-        <path d="M 62 18 L 62 32 L 64 32 L 64 18 Z" />
-        {/* V */}
-        <path d="M 68 18 L 73 32 L 75 32 L 80 18 L 78 18 L 74 30 L 70 18 Z" />
-        {/* E */}
-        <path d="M 84 18 L 84 32 L 92 32 L 92 30 L 86 30 L 86 26 L 91 26 L 91 24 L 86 24 L 86 20 L 92 20 L 92 18 Z" />
-      </g>
+                    <path d="M 40 8 L 160 8 C 180 8 192 20 192 40 C 192 60 180 72 160 72 L 40 72 C 20 72 8 60 8 40 C 8 20 20 8 40 8 Z M 45 30 A 10 10 0 1 1 45 50 A 10 10 0 1 1 45 30 Z M 75 25 L 75 55 L 95 55 L 95 50 L 82 50 L 82 25 Z M 100 25 L 100 55 L 107 55 L 107 25 Z M 112 25 L 123 55 L 130 55 L 141 25 L 134 25 L 126.5 48 L 119 25 Z M 146 25 L 146 55 L 170 55 L 170 50 L 153 50 L 153 42 L 168 42 L 168 38 L 153 38 L 153 30 L 170 30 L 170 25 Z"/>
                   </svg>
                 </div>
               </div>
@@ -363,7 +355,7 @@ const HomePage = () => {
               <div className="mb-6">
                 <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center">
                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2A3 3 0 0 1 15 5v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V5a3 3 0 0 1 3-3m7 9c0 3.53-2.61 6.44-6 6.93V21h-2v-3.07c-3.39-.49-6-3.4-6-6.93h2a5 5 0 0 0 5 5 5 5 0 0 0 5-5h2z" />
+                    <path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM4 19V5h7v14H4zm16 0h-7v-7h7v7zm0-9h-7V5h7v5z" />
                   </svg>
                 </div>
               </div>
@@ -379,7 +371,7 @@ const HomePage = () => {
               <div className="mb-6">
                 <div className="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center">
                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2A3 3 0 0 1 15 5v6a3 3 0 0 1-3 3 3 3 0 0 1-3-3V5a3 3 0 0 1 3-3m7 9c0 3.53-2.61 6.44-6 6.93V21h-2v-3.07c-3.39-.49-6-3.4-6-6.93h2a5 5 0 0 0 5 5 5 5 0 0 0 5-5h2z" />
+                    <path d="M 40 8 L 160 8 C 180 8 192 20 192 40 C 192 60 180 72 160 72 L 40 72 C 20 72 8 60 8 40 C 8 20 20 8 40 8 Z M 45 30 A 10 10 0 1 1 45 50 A 10 10 0 1 1 45 30 Z M 75 25 L 75 55 L 95 55 L 95 50 L 82 50 L 82 25 Z M 100 25 L 100 55 L 107 55 L 107 25 Z M 112 25 L 123 55 L 130 55 L 141 25 L 134 25 L 126.5 48 L 119 25 Z M 146 25 L 146 55 L 170 55 L 170 50 L 153 50 L 153 42 L 168 42 L 168 38 L 153 38 L 153 30 L 170 30 L 170 25 Z"/>
                   </svg>
                 </div>
               </div>
@@ -409,7 +401,7 @@ const HomePage = () => {
         {/* Content */}
         <div className="relative z-10 max-w-6xl mx-auto px-12 pt-16">
           {/* Upload Resume Button */}
-          <div className="flex justify-center mb-16">
+          <div className="relative flex justify-center mb-16 -top-32">
             <button className="bg-gradient-to-r from-red-400 to-pink-500 text-white px-12 py-5 rounded-full text-2xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center gap-4">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
@@ -425,104 +417,7 @@ const HomePage = () => {
             </h2>
           </div>
 
-          {/* Testimonial Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Review Card 1 */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
-                  MG
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black">Martin Goutry</h3>
-                  <p className="text-sm text-gray-600">Back-end developer at MyDonow</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                "Dico is finally addressing a long time problem we had when building UIs. It's ease of use and workflow seems really intuitive. Promising! &gt;&gt;"
-              </p>
-            </div>
-
-            {/* Review Card 2 */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
-                  SK
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black">Sarah Kim</h3>
-                  <p className="text-sm text-gray-600">Product Manager at TechCorp</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                "AI NERDS transformed my job search completely. I found my dream role in just 2 weeks! The AI matching is incredibly accurate."
-              </p>
-            </div>
-
-            {/* Review Card 3 */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
-                  RP
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black">Raj Patel</h3>
-                  <p className="text-sm text-gray-600">Software Engineer at StartupXYZ</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                "The ATS score feature helped me optimize my resume. I started getting 3x more interview calls. Highly recommend!"
-              </p>
-            </div>
-
-            {/* Review Card 4 */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-red-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
-                  EJ
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black">Emily Johnson</h3>
-                  <p className="text-sm text-gray-600">UX Designer at CreativeHub</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                "Mock interview practice was a game changer. I felt so prepared and confident during my actual interviews!"
-              </p>
-            </div>
-
-            {/* Review Card 5 */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
-                  DL
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black">David Lee</h3>
-                  <p className="text-sm text-gray-600">Data Analyst at DataCo</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                "The job alerts kept me updated on perfect matches. I never missed an opportunity. Best job search tool ever!"
-              </p>
-            </div>
-
-            {/* Review Card 6 */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
-                  AL
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-black">Anna Lopez</h3>
-                  <p className="text-sm text-gray-600">Marketing Lead at BrandWorks</p>
-                </div>
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                "Company insights helped me make informed decisions. I knew exactly what to expect before applying. Amazing!"
-              </p>
-            </div>
-          </div>
+          <TestimonialCardsScroller />
         </div>
 
         {/* Wave Divider at Bottom */}
@@ -542,6 +437,240 @@ const HomePage = () => {
   )
 }
 
+const TestimonialCardsScroller = () => {
+  const scrollRef = React.useRef(null)
+  const [isPaused, setIsPaused] = React.useState(false)
+
+  React.useEffect(() => {
+    const scrollContainer = scrollRef.current
+    if (!scrollContainer) return
+
+    let animationId
+    const scrollSpeed = 0.5 // pixels per frame - adjust for speed
+    
+    const autoScroll = () => {
+      if (!isPaused && window.innerWidth < 768) {
+        scrollContainer.scrollLeft += scrollSpeed
+        
+        // Reset to beginning when reaching halfway (creates infinite loop)
+        const maxScroll = scrollContainer.scrollWidth / 2
+        if (scrollContainer.scrollLeft >= maxScroll) {
+          scrollContainer.scrollLeft = 0
+        }
+      }
+      animationId = requestAnimationFrame(autoScroll)
+    }
+
+    animationId = requestAnimationFrame(autoScroll)
+
+    // Pause auto-scroll when user interacts
+    const handleTouchStart = () => setIsPaused(true)
+    const handleTouchEnd = () => {
+      setTimeout(() => setIsPaused(false), 2000) // Resume after 2 seconds
+    }
+
+    scrollContainer.addEventListener('touchstart', handleTouchStart)
+    scrollContainer.addEventListener('touchend', handleTouchEnd)
+
+    return () => {
+      cancelAnimationFrame(animationId)
+      scrollContainer.removeEventListener('touchstart', handleTouchStart)
+      scrollContainer.removeEventListener('touchend', handleTouchEnd)
+    }
+  }, [isPaused])
+
+  return (
+    <div ref={scrollRef} className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto overflow-x-auto md:overflow-x-visible scrollbar-hide px-4 md:px-0">
+      {/* Review Card 1 */}
+      <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-pink-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 opacity-0 animate-fadeInUp min-w-[85vw] md:min-w-0" style={{animationDelay: '0.1s', animationFillMode: 'forwards'}}>
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            MG
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Martin Goutry</h3>
+            <p className="text-sm text-white/80">Back-end developer at MyDonow</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "Dico is finally addressing a long time problem we had when building UIs. It's ease of use and workflow seems really intuitive. Promising! &gt;&gt;"
+        </p>
+      </div>
+
+      {/* Review Card 2 */}
+      <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-cyan-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 opacity-0 animate-fadeInUp min-w-[85vw] md:min-w-0" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            SK
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Sarah Kim</h3>
+            <p className="text-sm text-white/80">Product Manager at TechCorp</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "AI NERDS transformed my job search completely. I found my dream role in just 2 weeks! The AI matching is incredibly accurate."
+        </p>
+      </div>
+
+      {/* Review Card 3 */}
+      <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-emerald-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 opacity-0 animate-fadeInUp min-w-[85vw] md:min-w-0" style={{animationDelay: '0.3s', animationFillMode: 'forwards'}}>
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            RP
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Raj Patel</h3>
+            <p className="text-sm text-white/80">Software Engineer at StartupXYZ</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "The ATS score feature helped me optimize my resume. I started getting 3x more interview calls. Highly recommend!"
+        </p>
+      </div>
+
+      {/* Review Card 4 */}
+      <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-red-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 opacity-0 animate-fadeInUp min-w-[85vw] md:min-w-0" style={{animationDelay: '0.4s', animationFillMode: 'forwards'}}>
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-red-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            EJ
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Emily Johnson</h3>
+            <p className="text-sm text-white/80">UX Designer at CreativeHub</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "Mock interview practice was a game changer. I felt so prepared and confident during my actual interviews!"
+        </p>
+      </div>
+
+      {/* Review Card 5 */}
+      <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-orange-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 opacity-0 animate-fadeInUp min-w-[85vw] md:min-w-0" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            DL
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">David Lee</h3>
+            <p className="text-sm text-white/80">Data Analyst at DataCo</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "The job alerts kept me updated on perfect matches. I never missed an opportunity. Best job search tool ever!"
+        </p>
+      </div>
+
+      {/* Review Card 6 */}
+      <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-purple-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 opacity-0 animate-fadeInUp min-w-[85vw] md:min-w-0" style={{animationDelay: '0.6s', animationFillMode: 'forwards'}}>
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            AL
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Anna Lopez</h3>
+            <p className="text-sm text-white/80">Marketing Lead at BrandWorks</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "Company insights helped me make informed decisions. I knew exactly what to expect before applying. Amazing!"
+        </p>
+      </div>
+
+      {/* Duplicate cards for infinite scroll - Hidden on desktop */}
+      <div className="md:hidden bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-pink-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 min-w-[85vw]">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            MG
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Martin Goutry</h3>
+            <p className="text-sm text-white/80">Back-end developer at MyDonow</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "Dico is finally addressing a long time problem we had when building UIs. It's ease of use and workflow seems really intuitive. Promising! &gt;&gt;"
+        </p>
+      </div>
+
+      <div className="md:hidden bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-cyan-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 min-w-[85vw]">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            SK
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Sarah Kim</h3>
+            <p className="text-sm text-white/80">Product Manager at TechCorp</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "AI NERDS transformed my job search completely. I found my dream role in just 2 weeks! The AI matching is incredibly accurate."
+        </p>
+      </div>
+
+      <div className="md:hidden bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-emerald-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 min-w-[85vw]">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            RP
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Raj Patel</h3>
+            <p className="text-sm text-white/80">Software Engineer at StartupXYZ</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "The ATS score feature helped me optimize my resume. I started getting 3x more interview calls. Highly recommend!"
+        </p>
+      </div>
+
+      <div className="md:hidden bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-red-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 min-w-[85vw]">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-red-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            EJ
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Emily Johnson</h3>
+            <p className="text-sm text-white/80">UX Designer at CreativeHub</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "Mock interview practice was a game changer. I felt so prepared and confident during my actual interviews!"
+        </p>
+      </div>
+
+      <div className="md:hidden bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-orange-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 min-w-[85vw]">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            DL
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">David Lee</h3>
+            <p className="text-sm text-white/80">Data Analyst at DataCo</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "The job alerts kept me updated on perfect matches. I never missed an opportunity. Best job search tool ever!"
+        </p>
+      </div>
+
+      <div className="md:hidden bg-white/10 backdrop-blur-lg rounded-3xl p-8 border-2 border-purple-400 shadow-xl hover:shadow-2xl hover:-translate-y-2 hover:bg-white/20 transition-all duration-300 min-w-[85vw]">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-purple-400 flex items-center justify-center text-white text-2xl font-bold flex-shrink-0 shadow-lg">
+            AL
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-white">Anna Lopez</h3>
+            <p className="text-sm text-white/80">Marketing Lead at BrandWorks</p>
+          </div>
+        </div>
+        <p className="text-white/90 leading-relaxed italic">
+          "Company insights helped me make informed decisions. I knew exactly what to expect before applying. Amazing!"
+        </p>
+      </div>
+      </div>
+  )}
+
+
 // Bottom CTA Section with Bounce Animation
 const BottomCTASection = () => {
   const ref = React.useRef(null)
@@ -553,7 +682,7 @@ const BottomCTASection = () => {
   return (
     <div className="relative bg-white py-16" ref={ref}>
       <div className="max-w-7xl mx-auto px-12 text-center">
-        <h2 className="text-5xl font-bold text-black leading-tight">
+        <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
           {/* First Line */}
           <div className="inline-block">
             {line1Words.map((word, index) => (
