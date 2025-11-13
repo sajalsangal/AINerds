@@ -412,7 +412,7 @@ const HomePage = () => {
 
           {/* Heading */}
           <div className="text-center mb-16">
-            <h2 className="text-6xl font-bold text-white">
+            <h2 className="text-4xl md:text-6xl font-bold text-white">
               Our Peer Reviews
             </h2>
           </div>

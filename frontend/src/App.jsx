@@ -1,16 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
 
-function App() {
+import HomePage from "./components/Home";
+import UploadResume from "./components/UploadResume";
+import Dashboard from "./components/Dashboard";
+import AiNews from "./components/AINews";
 
+export default function App() {
   return (
-    <>
-    <div className="relative pt-20">
+    <Router>
       <Navbar />
-      <Home />
-    </div>
-    </>
-  )
-}
 
-export default App
+      {/* Gap so content doesn’t hide under fixed navbar */}
+      <div className="pt-20">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/upload-resume" element={<UploadResume />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/ai-news" element={<AiNews />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}

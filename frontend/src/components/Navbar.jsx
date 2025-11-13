@@ -1,107 +1,140 @@
-import { useEffect, useState } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("")
-  const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation(); // detects current route automatically
+  const currentPath = location.pathname;
 
-  //check scrolled and change navbar background
+  // Detect scroll for background blur
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [])
-
-  const handleMenuItem = (sectionId) => {
-    setActiveSection(sectionId);
-    setIsOpen(false)
-  }
+    const onScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const menuItems = [
-    { id: "home", label: "Home", href: "https://www.linkedin.com/feed/" },
-    { id: "uploadResume", label: "Upload Resume", href: "https://www.linkedin.com/feed/" },
-    { id: "dashboard", label: "Dashboard", href: "https://www.linkedin.com/feed/" },
-    { id: "aiNews", label: "AI News", href: "https://www.linkedin.com/feed/" }
-  ]
+    { id: "home", label: "Home", to: "/" },
+    { id: "uploadResume", label: "Upload Resume", to: "/upload-resume" },
+    { id: "dashboard", label: "Dashboard", to: "/dashboard" },
+    { id: "aiNews", label: "AI News", to: "/ai-news" },
+  ];
+
   return (
-    <nav className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] ${isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}>
-      <div className='text-white py-5 flex justify-between items-center'>
-        {/*Logo*/}
-        <div className='text-lg font-semibold cursor-pointer'>
-          <span className='text-[#8245ec]'>&lt;</span>
-          <span className='text-black'>AI</span>
-          <span className='text-[#8245ec]'>/</span>
-          <span className='text-black'>Nerds</span>
-          <span className='text-[#8245ec]'>&gt;</span>
+    <nav
+      className={`fixed top-0 w-full z-50 px-[7vw] transition-all duration-300 
+      ${
+        isScrolled
+          ? "bg-[#050414]/50 backdrop-blur-md shadow-md"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="py-5 flex justify-between items-center">
+
+        {/* LOGO */}
+        <div className="text-lg font-semibold cursor-pointer">
+          <span className="text-[#8245ec]">&lt;</span>
+          <span className="text-black">AI</span>
+          <span className="text-[#8245ec]">/</span>
+          <span className="text-black">Nerds</span>
+          <span className="text-[#8245ec]">&gt;</span>
         </div>
 
-        {/*Desktop Menu */}
-        <ul className={`md:flex space-x-20 ${
-          isScrolled ? "text-white" : "text-black"
-        }`}>
+        {/* DESKTOP MENU */}
+        <ul
+          className={`hidden md:flex space-x-20 ${
+            isScrolled ? "text-white" : "text-black"
+          }`}
+        >
           {menuItems.map((item) => (
-            <li key={item.id} className={`hidden md:flex cursor-pointer hover:text-[#AA7FF0] hover:font-semibold ${activeSection === item.id ? "text-[#AA7FF0] font-semibold" : ""
-              }`}>
-              <a href={item.href}>
-                <button onClick={() => handleMenuItem(item.id)}>
-                  {item.label}
-                </button>
-              </a>
+            <li key={item.id}>
+              <Link
+                to={item.to}
+                className={`cursor-pointer hover:text-[#AA7FF0] hover:font-semibold transition 
+                  ${
+                    currentPath === item.to
+                      ? "text-[#AA7FF0] font-semibold"
+                      : ""
+                  }
+                `}
+              >
+                {item.label}
+              </Link>
             </li>
           ))}
 
-          <div className="space-x-4 flex ">
+          {/* WHATSAPP + MENU ICON */}
+          <div className="flex space-x-4">
             <a
-              href="https://www.linkedin.com/feed/"
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-black hover:text-[#AA7FF0]'
+              href="https://wa.me/123456789"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:text-[#AA7FF0]"
             >
               <FaWhatsapp size={28} />
             </a>
 
-            {
-              isOpen ? (
-                <FiX className='text-black md:hidden text-3xl cursor-pointer '
-                  onClick={() => setIsOpen(false)}
-                />
-              ) : (
-                <FiMenu className='text-black md:hidden text-3xl cursor-pointer'
-                  onClick={() => setIsOpen(true)}
-                />
-              )
-            }
+            {isOpen ? (
+              <FiX
+                className="text-black md:hidden text-3xl cursor-pointer"
+                onClick={() => setIsOpen(false)}
+              />
+            ) : (
+              <FiMenu
+                className="text-black md:hidden text-3xl cursor-pointer"
+                onClick={() => setIsOpen(true)}
+              />
+            )}
           </div>
         </ul>
+
+        {/* MOBILE MENU ICON (outside desktop menu) */}
+        <div className="md:hidden">
+          {isOpen ? (
+            <FiX
+              className="text-black text-3xl cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+          ) : (
+            <FiMenu
+              className="text-black text-3xl cursor-pointer"
+              onClick={() => setIsOpen(true)}
+            />
+          )}
+        </div>
       </div>
 
-      {/**Mobile menu items */}
-
+      {/* MOBILE MENU LIST */}
       {isOpen && (
-        <div className='absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg'>
-          <ul className='flex flex-col items-center space-y-4 py-4 text-gray-300'>
+        <div className="absolute top-16 left-1/2 -translate-x-1/2 w-4/5 
+          bg-[#050414]/50 backdrop-blur-lg rounded-lg shadow-lg z-50 md:hidden">
+          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
             {menuItems.map((item) => (
-              <li key={item.id} className={`cursor-pointer hover:text-white hover:font-semibold ${activeSection === item.id ? "text-[#8254ec] font-semibold" : ""
-                }`}>
-                <a href={item.href}>
-                  <button onClick={() => handleMenuItem(item.id)}>
-                    {item.label}
-                  </button>
-                </a>
+              <li key={item.id}>
+                <Link
+                  to={item.to}
+                  onClick={() => setIsOpen(false)}
+                  className={`cursor-pointer hover:text-white hover:font-semibold
+                    ${
+                      currentPath === item.to
+                        ? "text-[#8254ec] font-semibold"
+                        : ""
+                    }
+                  `}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
