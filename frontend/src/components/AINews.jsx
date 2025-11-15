@@ -88,7 +88,7 @@ const AINews = () => {
             AI & Tech News
           </h1>
           <p className="text-2xl text-[#e85d75] font-bold hover:text-[#d94967] transition-colors duration-300">
-            "Stay ahead with updates on AI trends, career insights, and cutting-edge developer tools."
+            "Stay ahead with updates on latest AI trends, live updated for you daily !"
           </p>
         </div>
 
